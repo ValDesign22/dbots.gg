@@ -1,6 +1,6 @@
 {
   "name": "dbots.gg",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Unofficial discord.bots.gg API NPM Package",
   "main": "./dist/index.js",
   "keywords": [
@@ -13,7 +13,7 @@
   "homepage": "https://valredstone.gitbook.io/npm-discordbots",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ValRedstone/djs-extend.git"
+    "url": "git+https://github.com/ValRedstone/dbots.gg.git"
   },
   "bugs": {
     "url": "https://github.com/ValRedstone/dbots.gg/issues"
