@@ -34,7 +34,7 @@ const events_1 = require("events");
  * ```js
  * const DBGG = require("dbots.gg")
  *
- * const Api = new DBGG.Api(client, 'Your discord.bots.gg token', "Your website")
+ * const Api = new DBGG.Api(client, 'Your discord.bots.gg token')
  * ```
  * @link {@link https://valredstone.gitbook.io/npm-discordbots | Library docs}
  */
@@ -44,10 +44,9 @@ class Api extends events_1.EventEmitter {
      * Create discord.bots.gg API instance
      * @param {string} token Token or options
      * @param {string} client Discord Client or options
-     * @param {object?} options API Options
      */
 
-    constructor(client, token, options = {}) {
+    constructor(client, token) {
         super();
 
         if (!client) throw new Error("Client value is not defined");
