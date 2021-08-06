@@ -1,0 +1,13 @@
+{
+    "files": ["dist/index.d.ts"],
+    "compilerOptions": {
+      "moduleResolution": "node",
+      "noImplicitAny": true,
+      "declaration": true,
+      "strict": true,
+      "target": "ES2019",
+      "outDir": "./dist",
+      "module": "commonjs",
+      "esModuleInterop": true
+    }
+  }
