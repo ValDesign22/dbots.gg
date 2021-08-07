@@ -1,14 +1,8 @@
 /// <reference types="node" />
 
 import { EventEmitter } from 'events';
+import { Client } from 'discord.js';
 import { Snowflake, BotStats } from '../typings';
-
-interface APIOptions {
-  /**
-   * discord.bots.gg Token
-   */
-  token?: string;
-}
 
 /**
  * discord.bots.gg API Client for Posting stats or Fetching data
@@ -26,11 +20,10 @@ export declare class Api extends EventEmitter {
     /**
      * Create discord.bots.gg API instance
      * @param {string} token Token or options
-     * @param {string} client Discord Client or options
-     * @param {object?} options API Options
+     * @param {Client} client Discord Client or options
      */
 
-    constructor(client: string, token: string, options?: APIOptions);
+    constructor(client: Client, token: string);
 
     /**
      * Post bot stats to discord.bots.gg

@@ -26,6 +26,7 @@ exports.Api = void 0;
 const axios_1 = __importStar(require("axios"));
 const ApiError_1 = __importDefault(require("../utils/ApiError"));
 const querystring_1 = __importDefault(require("querystring"));
+const Discord = __importStar(require("discord.js"));
 const events_1 = require("events");
 
 /**
@@ -36,14 +37,14 @@ const events_1 = require("events");
  *
  * const Api = new DBGG.Api(client, 'Your discord.bots.gg token')
  * ```
- * @link {@link https://valredstone.gitbook.io/npm-discordbots | Library docs}
+ * @link {@link https://valredstone.gitbook.io/dbots-gg | Library docs}
  */
 
 class Api extends events_1.EventEmitter {
     /**
      * Create discord.bots.gg API instance
      * @param {string} token Token or options
-     * @param {string} client Discord Client or options
+     * @param {Discord.Client} client Discord Client or options
      */
 
     constructor(client, token) {
@@ -107,9 +108,7 @@ class Api extends events_1.EventEmitter {
      */
     async get(id) {
         if (!id) throw new Error("Missing Bot ID");
-        return await axios_1
-        .get(`https://discord.bots.gg/api/v1/bots/${id}`)
-        .then(res => res.json()).then(json => json);
+        return await axios_1.get(`https://discord.bots.gg/api/v1/bots/${id}`).then(data => data);
     }
 }
 

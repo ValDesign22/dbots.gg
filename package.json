@@ -1,6 +1,6 @@
 {
   "name": "dbots.gg",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Unofficial discord.bots.gg API NPM Package",
   "main": "./dist/index.js",
   "keywords": [
@@ -19,8 +19,8 @@
     "url": "https://github.com/ValRedstone/dbots.gg/issues"
   },
   "dependencies": {
-    "@types/axios": "^0.14.0",
     "axios": "^0.21.1",
+    "discord.js": "^13.0.1",
     "raw-body": "^2.4.1"
   },
   "devDependencies": {
