@@ -1,7 +1,7 @@
 # Discord.Bots.Gg Unofficial NPM Package
 
 [![downloadsBadge](https://img.shields.io/npm/dt/dbots.gg?style=for-the-badge)](https://npmjs.com/dbots.gg)
-[![versionBadge](https://img.shields.io/npm/v/gbots.gg?style=for-the-badge)](https://npmjs.com/dbots.gg)
+[![versionBadge](https://img.shields.io/npm/v/dbots.gg?style=for-the-badge)](https://npmjs.com/dbots.gg)
 
 # Installation
 ```shell
