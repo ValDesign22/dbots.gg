@@ -41,3 +41,5 @@ Your discord.<span>bots.<span>gg token can be found at `https://discord.bots.gg/
 > ```
 
 With this code your bot guilds and shards count will be posted on discord.<spam>bots.<span>gg
+  
+> ## Thanks to [docsify](https://docsify.js.org) for documentation tutorial.
