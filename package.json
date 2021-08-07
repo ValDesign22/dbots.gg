@@ -1,6 +1,6 @@
 {
   "name": "dbots.gg",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Unofficial discord.bots.gg API NPM Package",
   "main": "./dist/index.js",
   "keywords": [

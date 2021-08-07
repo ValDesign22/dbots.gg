@@ -107,12 +107,11 @@ class Api extends events_1.EventEmitter {
      */
     async get(id) {
         if (!id) throw new Error("Missing Bot ID");
-        const result = await axios_1.get(`https://discord.bots.gg/api/v1/bots/${id}`)
-        return {
-            guildCount: result.guildCount,
-            shardCount: result.shardCount
-        };
+        return await axios_1
+        .get(`https://discord.bots.gg/api/v1/bots/${id}`)
+        .then(res => res.json()).then(json => json);
     }
 }
 
 exports.Api = Api;
+exports.version = require("../../package.json").version;
