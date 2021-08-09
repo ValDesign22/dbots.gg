@@ -58,5 +58,28 @@ export declare class Api extends EventEmitter {
      * ```
      */
     get(id: BotStats): Promise<BotStats>;
+
+    /**
+     * 
+     * @param {Object} results Stats object
+     * @param {string} results.query Searches for bots that contain the query in their username or short description.
+     * @param {integer?} results.count The number of results to retrieve. Must be between 1 and 100.
+     * @param {integer?} results.page The page to look at.
+     * @returns {BotStats} Stats of bot requested
+     * @example
+     * ```js
+     * await Api.search("Data", 50, 0);
+     * // =>
+     * {
+     *     "count": 1000, // total number of matching bots
+     *     "limit": 50, // the max number of bots to retrieve
+     *     "page": 0, // the current page
+     *     "bots": [
+     *         // Uses the Bot structure
+     *         { Bot }, { Bot }, { Bot }, etc...
+     *     ]
+     * }
+     */
+    search(results: BotStats): Promise<BotStats>;
 }
 export {};
