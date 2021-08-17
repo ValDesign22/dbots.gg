@@ -3,3 +3,6 @@ src/
 docs/
 logs/
 *.log
+package-lock.json
+*.eslintrc.js
+*.gitignore

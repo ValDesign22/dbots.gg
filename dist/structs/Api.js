@@ -52,7 +52,9 @@ class Api extends events_1.EventEmitter {
 
         if (!client) throw new Error("Client value is not defined");
 
-        if (!client.ws || !client.user) throw new Error("Not valid Discord Client");
+        if (!(client instanceof Discord.Client)) throw new Error("Not valid Discord Client");
+
+        if (!token) throw new Error("Missing discord.bots.gg token");
 
         this.token = token;
         this.client = client;
@@ -64,6 +66,7 @@ class Api extends events_1.EventEmitter {
      * @param {number} stats.guildCount Guild count
      * @param {number?} stats.shardCount Shard count
      * @param {number?} stats.shardId Posting shard (useful for process sharding)
+     * @param {boolean?} log Log a message in console when stats are posted
      * @returns {BotStats} Passed object
      * @example
      * ```js
@@ -73,7 +76,7 @@ class Api extends events_1.EventEmitter {
      * })
      * ```
      */
-     async post(stats) {
+     async post(stats, log) {
         if (!stats || !stats.guildCount) throw new Error('Missing Guild Count');
         await axios_1
         .post(`https://discord.bots.gg/api/v1/bots/${this.client.user.id}/stats`, {
@@ -85,11 +88,11 @@ class Api extends events_1.EventEmitter {
                 Authorization: this.token,
                 "User-Agent": `${this.client.user.username}-${this.client.user.discriminator}/${require("../../package.json").version} (discord.js;+https://valredstone.gitbook.io/npm-discordbots) DBots/${this.client.user.id}`
             }
-        })
-        .then(console.log(`Server count posted on discord.bots.gg for bot: ${this.client.user.tag} (${this.client.user.id})`))
-        .catch(err => {
+        }).catch(err => {
             console.error(err);
         });
+
+        if (log) console.log(`Server count posted on discord.bots.gg for bot: ${this.client.user.tag} (${this.client.user.id})`);
     }
 
     /**

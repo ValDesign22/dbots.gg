@@ -1,6 +1,6 @@
 {
   "name": "dbots.gg",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Unofficial discord.bots.gg API NPM Package",
   "main": "./dist/index.js",
   "keywords": [
@@ -20,8 +20,9 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "discord.js": "^13.0.1",
-    "raw-body": "^2.4.1"
+    "discord.js": "^13.1.0",
+    "raw-body": "^2.4.1",
+    "typedoc": "^0.21.5"
   },
   "devDependencies": {
     "@types/node": "^14.14.41",

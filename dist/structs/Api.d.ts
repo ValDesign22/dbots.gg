@@ -31,6 +31,7 @@ export declare class Api extends EventEmitter {
      * @param {number} stats.guildCount Guild count
      * @param {number?} stats.shardCount Shard count
      * @param {number?} stats.shardId Posting shard (useful for process sharding)
+     * @param {boolean?} log Log a message in console when stats are posted
      * @returns {BotStats} Passed object
      * @example
      * ```js
@@ -41,7 +42,7 @@ export declare class Api extends EventEmitter {
      * ```
      */
 
-    post(stats: BotStats): Promise<BotStats>;
+    post(stats: BotStats, log: Boolean): Promise<BotStats>;
 
     /**
      * 
@@ -53,7 +54,7 @@ export declare class Api extends EventEmitter {
      * // =>
      * {
      *   guildCount: 25162,
-     *   shardCount 1
+     *   shardCount: 1
      * }
      * ```
      */

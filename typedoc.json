@@ -1,0 +1,10 @@
+{
+    "out": "./docs/",
+    "entryPoints": ["dist/structs/Api.d.ts"],
+    "readme": "./README.md",
+    "name": "dbots.gg",
+    "excludeExternals": true,
+    "excludePrivate": true,
+    "excludeInternal": true,
+    "theme": "default"
+  }
