@@ -1,22 +1,27 @@
-# dbots.gg
+# Discord.Bots.Gg Unofficial NPM Package
 
-[Discord.Bots.Gg Unofficial NPM Package]()
+[![downloadsBadge](https://img.shields.io/npm/dt/dbots.gg?style=for-the-badge)](https://npmjs.com/dbots.gg)
+[![versionBadge](https://img.shields.io/npm/v/dbots.gg?style=for-the-badge)](https://npmjs.com/dbots.gg)
 
-[![downloadsBadge](https://img.shields.io/npm/dt/dbots.gg?style=for-the-badge)](https://npmjs.com/dbots.gg) [![versionBadge](https://img.shields.io/npm/v/dbots.gg?style=for-the-badge)](https://npmjs.com/dbots.gg)[Installation]()
-
-```text
+# Installation
+```shell
 npm i dbots.gg
 ```
 
-[Introduction]()
+# Introduction
+The base client is discord.bot.gg Api, and it takes your discord.<span>bots.<span>gg token and provides you with plenty of methods to interact with the API.
 
-The base client is discord.bot.gg Api, and it takes your discord.bots.gg token and provides you with plenty of methods to interact with the API.
+Your discord.<span>bots.<span>gg token can be found at `https://discord.bots.gg/docs` and copying the token.
 
-Your discord.bots.gg token can be found at `https://discord.bots.gg/docs` and copying the token.[Links]()
+# Links
 
-[Documentation](https://valredstone.gitbook.io/dbots-gg) [API Reference](https://discord.bots.gg/docs) \| [GitHub](https://github.com/ValRedstone/dbots.gg) \| [NPM](https://npmjs.com/package/dbots.gg)[Examples]()[Posting stats:]()
+[Documentation](https://valredstone.gitbook.io/dbots-gg)
+[API Reference](https://discord.bots.gg/docs) | [GitHub](https://github.com/ValRedstone/dbots.gg) | [NPM](https://npmjs.com/package/dbots.gg)
 
-```text
+# Examples
+## Posting stats:
+
+```js
 const Discord = require("discord.js");
 const DBGG = require("dbots.gg");
 
@@ -33,9 +38,10 @@ client.on("ready", async () => {
 client.login("Your discord bot token");
 ```
 
-With this code your bot guilds and shards count will be posted on discord.bots.gg[Get Stats:]()
+With this code your bot guilds and shards count will be posted on discord.<spam>bots.<span>gg
 
-```text
+## Get Stats:
+```js
 await Api.get("123456789123456789");
 // =>
 {
@@ -46,4 +52,3 @@ await Api.get("123456789123456789");
 ```
 
 With this code you can get data from a Discord bot ID
-
