@@ -30,8 +30,8 @@ const Api = new DBGG.Api(client, 'Your discord.bots.gg token');
 
 client.on("ready", async () => {
     await Api.post({
-    guildCount: client.guilds.cache.size,
-    shardCount: 1
+        guildCount: client.guilds.cache.size,
+        shardCount: 1
     }, true); //Change it by false if you want no messages in console
 })
 
