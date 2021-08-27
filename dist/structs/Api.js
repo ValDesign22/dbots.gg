@@ -38,6 +38,7 @@ const events_1 = require("events");
  * const Api = new DBGG.Api(client, 'Your discord.bots.gg token')
  * ```
  * @link {@link https://valredstone.gitbook.io/dbots-gg | Library docs}
+ * @link {@link https://discord.bots.gg/docs | API Documenation}
  */
 
 class Api extends events_1.EventEmitter {
@@ -50,7 +51,7 @@ class Api extends events_1.EventEmitter {
     constructor(client, token) {
         super();
 
-        if (!client) throw new Error("Client value is not defined");
+        if (!client) throw new Error("Missing Discord Client");
 
         if (!(client instanceof Discord.Client)) throw new Error("Not valid Discord Client");
 
@@ -73,7 +74,10 @@ class Api extends events_1.EventEmitter {
      * await Api.post({
      *   guildCount: 25162,
      *   shardCount: 1
-     * })
+     * }, true);
+     * 
+     * // =>
+     * `Server count posted on discord.bots.gg for bot: USER#0000 (123456789123456789)`
      * ```
      */
      async post(stats, log) {
@@ -89,10 +93,10 @@ class Api extends events_1.EventEmitter {
                 "User-Agent": `${this.client.user.username}-${this.client.user.discriminator}/${require("../../package.json").version} (discord.js;+https://valredstone.gitbook.io/npm-discordbots) DBots/${this.client.user.id}`
             }
         }).catch(err => {
-            console.error(err);
+            throw new Error(new ApiError_1(err.code, err.message));
         });
 
-        if (log) console.log(`Server count posted on discord.bots.gg for bot: ${this.client.user.tag} (${this.client.user.id})`);
+        if (log) console.error(`Server count posted on discord.bots.gg for bot: ${this.client.user.tag} (${this.client.user.id})`);
     }
 
     /**
@@ -112,7 +116,11 @@ class Api extends events_1.EventEmitter {
      */
     async get(id) {
         if (!id) throw new Error("Missing Bot ID");
-        return await axios_1.get(`https://discord.bots.gg/api/v1/bots/${id}`).then(({data}) => data);
+        return await axios_1.get(`https://discord.bots.gg/api/v1/bots/${id}`)
+        .then(({data}) => data)
+        .catch(err => {
+            console.error(new ApiError_1(err.code, err.message));
+        });
     }
 
     /**
@@ -145,6 +153,9 @@ class Api extends events_1.EventEmitter {
             page: results.page
         })
         .then(({data}) => data)
+        .catch(err => {
+            console.error(new ApiError_1(err.code, err.message));
+        });
     }
 }
 

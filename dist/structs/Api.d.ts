@@ -13,6 +13,7 @@ import { Snowflake, BotStats } from '../typings';
  * const Api = new DBGG.Api(client, 'Your discord.bots.gg token')
  * ```
  * @link {@link https://valredstone.gitbook.io/npm-discordbots | Library docs}
+ * @link {@link https://discord.bots.gg/docs | API Documenation}
  */
 
 export declare class Api extends EventEmitter {
@@ -38,7 +39,10 @@ export declare class Api extends EventEmitter {
      * await Api.post({
      *   guildCount: 25162,
      *   shardCount: 1
-     * })
+     * }, true);
+     * 
+     * // =>
+     * `Server count posted on discord.bots.gg for bot: USER#0000 (123456789123456789)`
      * ```
      */
 
