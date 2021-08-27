@@ -110,7 +110,7 @@ class Api extends events_1.EventEmitter {
      * {
      *   guildCount: 25162,
      *   shardCount: 1,
-     *   ...
+     *   //and other data
      * }
      * ```
      */

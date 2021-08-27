@@ -58,7 +58,8 @@ export declare class Api extends EventEmitter {
      * // =>
      * {
      *   guildCount: 25162,
-     *   shardCount: 1
+     *   shardCount: 1,
+     *   //and other data
      * }
      * ```
      */

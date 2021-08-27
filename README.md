@@ -32,10 +32,23 @@ client.on("ready", async () => {
     await Api.post({
     guildCount: client.guilds.cache.size,
     shardCount: 1
-    })
+    }, true); //Change it by false if you want no messages in console
 })
 
 client.login("Your discord bot token");
 ```
 
 With this code your bot guilds and shards count will be posted on discord.<spam>bots.<span>gg
+
+## Get Stats:
+```js
+await Api.get("123456789123456789");
+// =>
+{
+  guildCount: 25162,
+  shardCount: 1,
+  //and other data
+}
+```
+
+With this code you can get data from a Discord bot ID
