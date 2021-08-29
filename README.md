@@ -15,7 +15,7 @@ Your discord.<span>bots.<span>gg token can be found at `https://discord.bots.gg/
 
 # Links
 
-[Documentation](https://valredstone.gitbook.io/dbots-gg)
+[Documentation](https://dbotsgg.js.org)
 [API Reference](https://discord.bots.gg/docs) | [GitHub](https://github.com/ValRedstone/dbots.gg) | [NPM](https://npmjs.com/package/dbots.gg)
 
 # Examples
